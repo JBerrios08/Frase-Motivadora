@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases Motivadoras</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7Q1z6yZP4Yd4Ll5LRHgk3Nf6DKo9GxOg2K" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5 text-center">
+        <div class="card p-4 shadow">
+            <div id="fraseMotivadora" class="mb-4">
+                <h4 class="text-primary">"El éxito no es la clave de la felicidad. La felicidad es la clave del éxito."</h4>
+                <p class="text-secondary">- Albert Schweitzer</p>
+            </div>
+            <button class="btn btn-primary" onclick="cambiarFrase()">Recargar frase motivadora</button>
+        </div>
+    </div>
+
+    <script>
+        const frases = [
+            { texto: "El éxito no es la clave de la felicidad. La felicidad es la clave del éxito.", autor: "Albert Schweitzer" },
+            { texto: "La educación es el arma más poderosa que puedes usar para cambiar el mundo.", autor: "Nelson Mandela" },
+            { texto: "No te preocupes por tus fracasos, preocúpate por las oportunidades que pierdes al no intentarlo.", autor: "Jack Canfield" },
+            { texto: "La única forma de hacer un gran trabajo es amar lo que haces.", autor: "Steve Jobs" },
+            { texto: "Nunca es demasiado tarde para ser lo que podrías haber sido.", autor: "George Eliot" }
+        ];
+
+        function cambiarFrase() {
+            const indiceAleatorio = Math.floor(Math.random() * frases.length);
+            const fraseSeleccionada = frases[indiceAleatorio];
+            document.getElementById("fraseMotivadora").innerHTML = `
+                <h4 class="text-primary">"${fraseSeleccionada.texto}"</h4>
+                <p class="text-secondary">- ${fraseSeleccionada.autor}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
